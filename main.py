@@ -27,7 +27,7 @@ run_update_query("INSERT INTO books (id, title, author_id, year) VALUES (?, ?, ?
 print("All Books")
 books = run_query_select("SELECT * FROM books")
 for b in books:
-  print(f'{b["title"]} — {b["name"]}')
+  print(b["title"])
 
 print("Books from 1960")
 books = run_query_select("SELECT * FROM books WHERE year > 1960")
