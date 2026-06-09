@@ -27,19 +27,19 @@ run_update_query("INSERT INTO books (id, title, author_id, year) VALUES (?, ?, ?
 print("All Books")
 books = run_query_select("SELECT * FROM books")
 for b in books:
-    print(b)
+  print(f'{b["title"]} — {b["name"]}')
 
 print("Books from 1960")
 books = run_query_select("SELECT * FROM books WHERE year > 1960")
 for b in books:
-    print(b)
+   print(f'{b["title"]} — {b["name"]}')
 
 print("books and authors")
 books = run_query_select("""SELECT b.title, a.name
                             FROM   books b
                             INNER JOIN authors a ON b.author_id = a.id""")
 for b in books:
-    print(b)
+   print(f'{b["title"]} — {b["name"]}')
 
 print("Add new book")
 try:
